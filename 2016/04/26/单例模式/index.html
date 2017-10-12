@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="设计模式," />
 
 
 
@@ -79,20 +79,18 @@
 
 
 
-<meta name="description" content="&amp;emsp;&amp;emsp;去年，我来大学一年半了。体会了高中时老师们让我们无比憧憬的大学，但其实也就这样，和想象中的完全不一样。有点失望，有点迷茫，课程太多太杂，不完全是自己想上的，而且还一样会有点名的东西来约束我们，但却不会有他们口中普遍的蹭课……">
+<meta name="description" content="&amp;emsp;&amp;emsp;单例模式是一种比较常用的设计模式，提供了对唯一实例的受控访问，由于在系统内存中只存在一个对象，因此可以节约系统资源，对于一些需要频繁创建和销毁的对象，单例模式无疑可以提高系统的性能。   &amp;emsp;&amp;emsp;但是，由于单利模式中没有抽象层，因此单例类的扩展有很大的困难。滥用单例将带来一些负面问题，如为了节省资源将数据库连接池对象设计为的单例类，可能会导致共享连接池对象的">
+<meta name="keywords" content="设计模式">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2015 年度总结">
-<meta property="og:url" content="http://yoursite.com/2015/12/13/2015年度总结/index.html">
+<meta property="og:title" content="设计模式之单例模式">
+<meta property="og:url" content="http://yoursite.com/2016/04/26/单例模式/index.html">
 <meta property="og:site_name" content="The star note">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;去年，我来大学一年半了。体会了高中时老师们让我们无比憧憬的大学，但其实也就这样，和想象中的完全不一样。有点失望，有点迷茫，课程太多太杂，不完全是自己想上的，而且还一样会有点名的东西来约束我们，但却不会有他们口中普遍的蹭课……">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;单例模式是一种比较常用的设计模式，提供了对唯一实例的受控访问，由于在系统内存中只存在一个对象，因此可以节约系统资源，对于一些需要频繁创建和销毁的对象，单例模式无疑可以提高系统的性能。   &amp;emsp;&amp;emsp;但是，由于单利模式中没有抽象层，因此单例类的扩展有很大的困难。滥用单例将带来一些负面问题，如为了节省资源将数据库连接池对象设计为的单例类，可能会导致共享连接池对象的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://7xki5q.com1.z0.glb.clouddn.com/韶关学院夜景2.jpg">
-<meta property="og:image" content="http://7xki5q.com1.z0.glb.clouddn.com/韶关学院夜景1.jpg">
-<meta property="og:updated_time" content="2017-10-11T08:49:54.083Z">
+<meta property="og:updated_time" content="2016-08-29T11:39:31.254Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2015 年度总结">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;去年，我来大学一年半了。体会了高中时老师们让我们无比憧憬的大学，但其实也就这样，和想象中的完全不一样。有点失望，有点迷茫，课程太多太杂，不完全是自己想上的，而且还一样会有点名的东西来约束我们，但却不会有他们口中普遍的蹭课……">
-<meta name="twitter:image" content="http://7xki5q.com1.z0.glb.clouddn.com/韶关学院夜景2.jpg">
+<meta name="twitter:title" content="设计模式之单例模式">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;单例模式是一种比较常用的设计模式，提供了对唯一实例的受控访问，由于在系统内存中只存在一个对象，因此可以节约系统资源，对于一些需要频繁创建和销毁的对象，单例模式无疑可以提高系统的性能。   &amp;emsp;&amp;emsp;但是，由于单利模式中没有抽象层，因此单例类的扩展有很大的困难。滥用单例将带来一些负面问题，如为了节省资源将数据库连接池对象设计为的单例类，可能会导致共享连接池对象的">
 
 
 
@@ -122,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2015/12/13/2015年度总结/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/04/26/单例模式/"/>
 
 
 
 
 
-  <title>2015 年度总结 | The star note</title>
+  <title>设计模式之单例模式 | The star note</title>
   
 
 
@@ -275,7 +273,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/12/13/2015年度总结/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/04/26/单例模式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kntryer">
@@ -292,7 +290,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">2015 年度总结</h1>
+          <h1 class="post-title" itemprop="name headline">设计模式之单例模式</h1>
         
 
         <div class="post-meta">
@@ -304,8 +302,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-12-13T19:19:55+08:00">
-                2015-12-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-26T13:19:55+08:00">
+                2016-04-26
               </time>
             
 
@@ -327,8 +325,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
+                  <a href="/categories/技术笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">技术笔记</span>
                   </a>
                 </span>
 
@@ -338,8 +336,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/随笔/年度总结/" itemprop="url" rel="index">
-                    <span itemprop="name">年度总结</span>
+                  <a href="/categories/技术笔记/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
                   </a>
                 </span>
 
@@ -355,7 +353,7 @@
 
           
           
-             <span id="/2015/12/13/2015年度总结/" class="leancloud_visitors" data-flag-title="2015 年度总结">
+             <span id="/2016/04/26/单例模式/" class="leancloud_visitors" data-flag-title="设计模式之单例模式">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -386,19 +384,126 @@
       
 
       
-        <p>&emsp;&emsp;去年，我来大学一年半了。体会了高中时老师们让我们无比憧憬的大学，但其实也就这样，和想象中的完全不一样。有点失望，有点迷茫，课程太多太杂，不完全是自己想上的，而且还一样会有点名的东西来约束我们，但却不会有他们口中普遍的蹭课……</p>
-<div align="center"><br><img src="http://7xki5q.com1.z0.glb.clouddn.com/韶关学院夜景2.jpg" alt="韶关学院夜景" align="center"><br></div>
-
+        <p>&emsp;&emsp;单例模式是一种比较常用的设计模式，提供了对唯一实例的受控访问，由于在系统内存中只存在一个对象，因此可以节约系统资源，对于一些需要频繁创建和销毁的对象，单例模式无疑可以提高系统的性能。  </p>
+<p>&emsp;&emsp;但是，由于单利模式中没有抽象层，因此单例类的扩展有很大的困难。滥用单例将带来一些负面问题，如为了节省资源将数据库连接池对象设计为的单例类，可能会导致共享连接池对象的程序过多而出现连接池溢出。</p>
 <a id="more"></a>
-<p>&emsp;&emsp;大学生活里，眼中的同学朋友每天也就是在宿舍、饭堂、教学楼、饭堂这个死循环中游走。像温水中的青蛙，在安逸的环境中，我们很容易被周围的环境所迷惑，忘却了来大学之前的远大志向，最终导致消沉、放纵和堕落。大学说好听是个最接近社会的实践平台，说不好听，他就是个坑。而这个坑还在慢慢地变深，待醒悟过来时，我想这应该是我们已经正式走进社会的时候。这时候我们开始不知所措，没有条件、也没有办法。我们一不小心就掉进别人设计好的游戏程序里，没有路标，也没有方向。那时，或许用生命才能走出一条路。但生命只有一次，你确定你总能幸运吗？</p>
-<div align="center"><br><img src="http://7xki5q.com1.z0.glb.clouddn.com/韶关学院夜景1.jpg" alt="韶关学院夜景" align="center"><br></div>
+<p>&emsp;&emsp;如果实例化的对象长时间不被利用，系统会认为是垃圾而被回收，这将导致对象状态的丢失。（以上是借鉴大神的话，大神说的话总是不可挑剔，嘿嘿）</p>
+<p>&emsp;&emsp;之前虽然有用过单例模式，但是都没有深入去了解过，直到在一本讲高并发的书上看到，就对单例模式感兴趣起来，现在就来谈谈单例模式吧！  </p>
+<h3 id="写法"><a href="#写法" class="headerlink" title="写法"></a>写法</h3><blockquote>
+<p>网上搜了很多单例模式的博客，有着各种各样的说法，而我最常用的单例模式是这种（听说这叫双重检查锁定单例模式，又叫懒汉单例模式。好奇怪的名字！）：</p>
+</blockquote>
+<p>这种模式第一次使用才初始化，避免浪费内存，但必须加锁才能完成单例，执行效率低</p>
+<pre><code>class Person {
 
-<p>&emsp;&emsp;那时，我想过得不同，我不想过这千篇一律的生活，我想学自己喜欢的东西，想过自己不一样的生活。所以，我加入了环创。  </p>
-<p>&emsp;&emsp;在这里，我认识了很多人，很多厉害的人。而且像他们这种 NB 的人，依然比你更努力学习者，我想这就是他们 NB 的前提吧。那时我很兴奋，似乎在坑里看到了光，很美的光。在师兄们的影响下，我有了路标，也有了方向，我逃离了安逸的生活，来到了这个累而充实而快乐的生活。 </p>
-<p>&emsp;&emsp;在这一年里，我确定了自己的人生目标，并为之脚踏实地、努力地前进着。虽然，在环创这样的学习气氛下学习效率很高，但是，你也会迷茫。你会发现自己和舍友走得不是很近，每天只有上课时间和晚上睡觉时间才能见上一面，也没有什么时间交流，你就好像在闭门造车，即使在目标上小有成就，但也抵不过心中的压抑。而这个时候，我往往会给自己放几天假，和舍友们玩玩游戏，聊聊日常，看看他们的看法。我觉得这样很好，保留自己的观点，而不介意听听别人的观点，这样对人生的看法会更全面点。  </p>
-<p>&emsp;&emsp;在这一年里，我学会了很多东西，我非常感谢能遇到环创这个团队。没有这个团队，我或许还在宿舍看动漫，玩游戏，继续泡面要等五分钟的安逸生活；没有这个团队，我或许认识不了这么多不一样的人，在社会当任不同角色的人；没有这个团队，我在大学里或许不敢于不一样，被环境同化，最后成为别人的环境。  </p>
-<p>&emsp;&emsp;但是，我一直这样认为，环创，只是一个提供很好的学习气氛和环境，要成为后来者成功的先例，需要相信自己并不懈的努力和勇于尝试与创新。没有在环创，也不要妄自菲薄，只要你敢于不一样，并坚持着，你也是成功的。</p>
-<p>&emsp;&emsp;这一年，一路走来，我并不后悔。</p>
+    private static Person instance;
+
+    private Person(){}
+
+    public static Person getInstance(){
+        if(instance == null){
+            synchronized (Person.class){
+                if(instance == null){
+                    instance = new Person();
+                    }
+                 }
+            }
+        return instance;
+    }
+}
+</code></pre><blockquote>
+<p>而在高并发这本书中我了解到懒汉单例模式写法的线程安全与高并发的一些知识： </p>
+</blockquote>
+<h4 id="懒汉单例模式（a）"><a href="#懒汉单例模式（a）" class="headerlink" title="懒汉单例模式（a）"></a>懒汉单例模式（a）</h4><blockquote>
+<p>线程不安全</p>
+</blockquote>
+<pre><code>class Person {
+    private static Person instance;
+    private Person(){}
+    public static Person getInstance(){
+        if(instance == null){
+             instance = new Person();
+         }
+        return instance;
+    }
+}
+</code></pre><h4 id="懒汉单例模式（b）"><a href="#懒汉单例模式（b）" class="headerlink" title="懒汉单例模式（b）"></a>懒汉单例模式（b）</h4><blockquote>
+<p>线程安全，高并发性能低</p>
+</blockquote>
+<pre><code>class Person {
+    private static Person instance;
+    private Person(){}
+    public static synchronized Person getInstance(){
+        if(instance == null){
+            instance = new Person();
+        }
+        return instance;
+    }
+}
+</code></pre><h4 id="懒汉单例模式（c）"><a href="#懒汉单例模式（c）" class="headerlink" title="懒汉单例模式（c）"></a>懒汉单例模式（c）</h4><blockquote>
+<p>线程安全，高并发性能高,且最常见的，和上面说的我比较常用的相似，但比我的那个效率高，因为这个加锁的对象是字节对象，占内存低，执行效率会高一丢丢</p>
+</blockquote>
+<pre><code>class Person {
+    private static Person instance;
+    private static byte[] lock = new byte[0];
+    private Person(){}
+    public static Person getInstance(){
+        if(instance == null){
+            synchronized (lock){
+                if(instance == null){
+                    instance = new Person();
+                    }
+                }
+        }
+        return instance;
+    }
+}
+</code></pre><h4 id="懒汉单例模式（d）"><a href="#懒汉单例模式（d）" class="headerlink" title="懒汉单例模式（d）"></a>懒汉单例模式（d）</h4><blockquote>
+<p>线程安全，高并发性能高，我想这个只有经常用多线程的人才会写这个（反正我很少写，这是第二次！）</p>
+</blockquote>
+<pre><code>class Person {
+    private static Person instance;
+    private static ReentrantLock lock = new ReentrantLock();
+    private Person(){}
+    public static Person getInstance(){
+        if(instance == null){
+            lock.lock();
+            if(instance == null){
+                instance = new Person();
+            }
+            lock.unlock();
+        }
+       return instance;
+       }
+}
+</code></pre><blockquote>
+<p>既然有懒汉单例模式，会不会还有其他的单例模式呢？答案是肯定的，让我们了解另外一种单例模式–饿汉单例模式。</p>
+</blockquote>
+<h4 id="饿汉单例模式"><a href="#饿汉单例模式" class="headerlink" title="饿汉单例模式"></a>饿汉单例模式</h4><blockquote>
+<p>这种虽然没有加锁，执行效率会高，但是类加载时就初始化，很耗内存</p>
+</blockquote>
+<pre><code>class Person{
+    private static final Person PERSON = new Person();
+    private Person(){}
+    public static Person getIntance(){
+        return PERSON;
+    }
+}
+</code></pre><h4 id="登记单例模式"><a href="#登记单例模式" class="headerlink" title="登记单例模式"></a>登记单例模式</h4><blockquote>
+<p>听说这是最好的单例模式，解决了上面单例模式的缺点（不知道是不是，再查查，嘿嘿）</p>
+</blockquote>
+<pre><code>class Person{
+    private Person(){}
+    public static Person getInstance(){
+        return Hodler.PERSON;
+    }
+    private static class Hodler{
+        private static final Person PERSON = new Person();
+    }
+}
+</code></pre><h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><ul>
+<li>单例模式需要私有化构造函数</li>
+<li>定义静态的Singleton instance对象和getInstance()方法</li>
+</ul>
 
       
     </div>
@@ -443,6 +548,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/设计模式/" rel="tag"># 设计模式</a>
+          
+        </div>
+      
 
       
       
@@ -452,14 +563,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2015/12/13/2015年度总结/" rel="next" title="2015 年度总结">
+                <i class="fa fa-chevron-left"></i> 2015 年度总结
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/04/26/单例模式/" rel="prev" title="设计模式之单例模式">
-                设计模式之单例模式 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/12/28/2016年度总结/" rel="prev" title="2016 年度总结">
+                2016 年度总结 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -512,8 +627,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -587,6 +711,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#写法"><span class="nav-number">1.</span> <span class="nav-text">写法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#懒汉单例模式（a）"><span class="nav-number">1.1.</span> <span class="nav-text">懒汉单例模式（a）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#懒汉单例模式（b）"><span class="nav-number">1.2.</span> <span class="nav-text">懒汉单例模式（b）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#懒汉单例模式（c）"><span class="nav-number">1.3.</span> <span class="nav-text">懒汉单例模式（c）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#懒汉单例模式（d）"><span class="nav-number">1.4.</span> <span class="nav-text">懒汉单例模式（d）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#饿汉单例模式"><span class="nav-number">1.5.</span> <span class="nav-text">饿汉单例模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#登记单例模式"><span class="nav-number">1.6.</span> <span class="nav-text">登记单例模式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意"><span class="nav-number">2.</span> <span class="nav-text">注意</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
