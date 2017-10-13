@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="The star note">
 <meta property="og:description" content="&amp;emsp;&amp;emsp;单例模式是一种比较常用的设计模式，提供了对唯一实例的受控访问，由于在系统内存中只存在一个对象，因此可以节约系统资源，对于一些需要频繁创建和销毁的对象，单例模式无疑可以提高系统的性能。   &amp;emsp;&amp;emsp;但是，由于单利模式中没有抽象层，因此单例类的扩展有很大的困难。滥用单例将带来一些负面问题，如为了节省资源将数据库连接池对象设计为的单例类，可能会导致共享连接池对象的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2016-08-29T11:39:31.254Z">
+<meta property="og:updated_time" content="2017-10-13T01:20:21.126Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设计模式之单例模式">
 <meta name="twitter:description" content="&amp;emsp;&amp;emsp;单例模式是一种比较常用的设计模式，提供了对唯一实例的受控访问，由于在系统内存中只存在一个对象，因此可以节约系统资源，对于一些需要频繁创建和销毁的对象，单例模式无疑可以提高系统的性能。   &amp;emsp;&amp;emsp;但是，由于单利模式中没有抽象层，因此单例类的扩展有很大的困难。滥用单例将带来一些负面问题，如为了节省资源将数据库连接池对象设计为的单例类，可能会导致共享连接池对象的">
@@ -392,25 +392,8 @@
 <h3 id="写法"><a href="#写法" class="headerlink" title="写法"></a>写法</h3><blockquote>
 <p>网上搜了很多单例模式的博客，有着各种各样的说法，而我最常用的单例模式是这种（听说这叫双重检查锁定单例模式，又叫懒汉单例模式。好奇怪的名字！）：</p>
 </blockquote>
-<p>这种模式第一次使用才初始化，避免浪费内存，但必须加锁才能完成单例，执行效率低</p>
-<pre><code>class Person {
-
-    private static Person instance;
-
-    private Person(){}
-
-    public static Person getInstance(){
-        if(instance == null){
-            synchronized (Person.class){
-                if(instance == null){
-                    instance = new Person();
-                    }
-                 }
-            }
-        return instance;
-    }
-}
-</code></pre><blockquote>
+<p>这种模式第一次使用才初始化，避免浪费内存，但必须加锁才能完成单例，执行效率低<br>    <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">class Person &#123;</div><div class="line"></div><div class="line">       private static Person instance;</div><div class="line"></div><div class="line">       private <span class="function"><span class="title">Person</span></span>()&#123;&#125;</div><div class="line"></div><div class="line">       public static Person <span class="function"><span class="title">getInstance</span></span>()&#123;</div><div class="line">       	<span class="keyword">if</span>(instance == null)&#123;</div><div class="line">           	synchronized (Person.class)&#123;</div><div class="line">               	<span class="keyword">if</span>(instance == null)&#123;</div><div class="line">                   	instance = new Person();</div><div class="line">                   	&#125;</div><div class="line">                	&#125;</div><div class="line">               &#125;</div><div class="line">       	<span class="built_in">return</span> instance;</div><div class="line">       &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<blockquote>
 <p>而在高并发这本书中我了解到懒汉单例模式写法的线程安全与高并发的一些知识： </p>
 </blockquote>
 <h4 id="懒汉单例模式（a）"><a href="#懒汉单例模式（a）" class="headerlink" title="懒汉单例模式（a）"></a>懒汉单例模式（a）</h4><blockquote>
