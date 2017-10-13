@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="The star note">
 <meta property="og:description" content="&amp;emsp;&amp;emsp;单例模式是一种比较常用的设计模式，提供了对唯一实例的受控访问，由于在系统内存中只存在一个对象，因此可以节约系统资源，对于一些需要频繁创建和销毁的对象，单例模式无疑可以提高系统的性能。   &amp;emsp;&amp;emsp;但是，由于单利模式中没有抽象层，因此单例类的扩展有很大的困难。滥用单例将带来一些负面问题，如为了节省资源将数据库连接池对象设计为的单例类，可能会导致共享连接池对象的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-13T01:20:21.126Z">
+<meta property="og:updated_time" content="2017-10-13T01:54:15.971Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设计模式之单例模式">
 <meta name="twitter:description" content="&amp;emsp;&amp;emsp;单例模式是一种比较常用的设计模式，提供了对唯一实例的受控访问，由于在系统内存中只存在一个对象，因此可以节约系统资源，对于一些需要频繁创建和销毁的对象，单例模式无疑可以提高系统的性能。   &amp;emsp;&amp;emsp;但是，由于单利模式中没有抽象层，因此单例类的扩展有很大的困难。滥用单例将带来一些负面问题，如为了节省资源将数据库连接池对象设计为的单例类，可能会导致共享连接池对象的">
@@ -392,98 +392,38 @@
 <h3 id="写法"><a href="#写法" class="headerlink" title="写法"></a>写法</h3><blockquote>
 <p>网上搜了很多单例模式的博客，有着各种各样的说法，而我最常用的单例模式是这种（听说这叫双重检查锁定单例模式，又叫懒汉单例模式。好奇怪的名字！）：</p>
 </blockquote>
-<p>这种模式第一次使用才初始化，避免浪费内存，但必须加锁才能完成单例，执行效率低<br>    <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">class Person &#123;</div><div class="line"></div><div class="line">       private static Person instance;</div><div class="line"></div><div class="line">       private <span class="function"><span class="title">Person</span></span>()&#123;&#125;</div><div class="line"></div><div class="line">       public static Person <span class="function"><span class="title">getInstance</span></span>()&#123;</div><div class="line">       	<span class="keyword">if</span>(instance == null)&#123;</div><div class="line">           	synchronized (Person.class)&#123;</div><div class="line">               	<span class="keyword">if</span>(instance == null)&#123;</div><div class="line">                   	instance = new Person();</div><div class="line">                   	&#125;</div><div class="line">                	&#125;</div><div class="line">               &#125;</div><div class="line">       	<span class="built_in">return</span> instance;</div><div class="line">       &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这种模式第一次使用才初始化，避免浪费内存，但必须加锁才能完成单例，执行效率低<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">class Person &#123;</div><div class="line"></div><div class="line">    private static Person instance;</div><div class="line"></div><div class="line">    private <span class="function"><span class="title">Person</span></span>()&#123;&#125;</div><div class="line"></div><div class="line">    public static Person <span class="function"><span class="title">getInstance</span></span>()&#123;</div><div class="line">    	<span class="keyword">if</span>(instance == null)&#123;</div><div class="line">        	synchronized (Person.class)&#123;</div><div class="line">            	<span class="keyword">if</span>(instance == null)&#123;</div><div class="line">                	instance = new Person();</div><div class="line">            	&#125;</div><div class="line">         	&#125;</div><div class="line">        &#125;</div><div class="line">    	<span class="built_in">return</span> instance;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <blockquote>
 <p>而在高并发这本书中我了解到懒汉单例模式写法的线程安全与高并发的一些知识： </p>
 </blockquote>
 <h4 id="懒汉单例模式（a）"><a href="#懒汉单例模式（a）" class="headerlink" title="懒汉单例模式（a）"></a>懒汉单例模式（a）</h4><blockquote>
 <p>线程不安全</p>
 </blockquote>
-<pre><code>class Person {
-    private static Person instance;
-    private Person(){}
-    public static Person getInstance(){
-        if(instance == null){
-             instance = new Person();
-         }
-        return instance;
-    }
-}
-</code></pre><h4 id="懒汉单例模式（b）"><a href="#懒汉单例模式（b）" class="headerlink" title="懒汉单例模式（b）"></a>懒汉单例模式（b）</h4><blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">class Person &#123;</div><div class="line">    private static Person instance;</div><div class="line">    private <span class="function"><span class="title">Person</span></span>()&#123;&#125;</div><div class="line">    public static Person <span class="function"><span class="title">getInstance</span></span>()&#123;</div><div class="line">    	<span class="keyword">if</span>(instance == null)&#123;</div><div class="line">         	instance = new Person();</div><div class="line">     	&#125;</div><div class="line">    	<span class="built_in">return</span> instance;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="懒汉单例模式（b）"><a href="#懒汉单例模式（b）" class="headerlink" title="懒汉单例模式（b）"></a>懒汉单例模式（b）</h4><blockquote>
 <p>线程安全，高并发性能低</p>
 </blockquote>
-<pre><code>class Person {
-    private static Person instance;
-    private Person(){}
-    public static synchronized Person getInstance(){
-        if(instance == null){
-            instance = new Person();
-        }
-        return instance;
-    }
-}
-</code></pre><h4 id="懒汉单例模式（c）"><a href="#懒汉单例模式（c）" class="headerlink" title="懒汉单例模式（c）"></a>懒汉单例模式（c）</h4><blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">class Person &#123;</div><div class="line">    private static Person instance;</div><div class="line">    private <span class="function"><span class="title">Person</span></span>()&#123;&#125;</div><div class="line">    public static synchronized Person <span class="function"><span class="title">getInstance</span></span>()&#123;</div><div class="line">    	<span class="keyword">if</span>(instance == null)&#123;</div><div class="line">        	instance = new Person();</div><div class="line">    	&#125;</div><div class="line">    	<span class="built_in">return</span> instance;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="懒汉单例模式（c）"><a href="#懒汉单例模式（c）" class="headerlink" title="懒汉单例模式（c）"></a>懒汉单例模式（c）</h4><blockquote>
 <p>线程安全，高并发性能高,且最常见的，和上面说的我比较常用的相似，但比我的那个效率高，因为这个加锁的对象是字节对象，占内存低，执行效率会高一丢丢</p>
 </blockquote>
-<pre><code>class Person {
-    private static Person instance;
-    private static byte[] lock = new byte[0];
-    private Person(){}
-    public static Person getInstance(){
-        if(instance == null){
-            synchronized (lock){
-                if(instance == null){
-                    instance = new Person();
-                    }
-                }
-        }
-        return instance;
-    }
-}
-</code></pre><h4 id="懒汉单例模式（d）"><a href="#懒汉单例模式（d）" class="headerlink" title="懒汉单例模式（d）"></a>懒汉单例模式（d）</h4><blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">class Person &#123;</div><div class="line">    private static Person instance;</div><div class="line">    private static byte[] lock = new byte[0];</div><div class="line">    private <span class="function"><span class="title">Person</span></span>()&#123;&#125;</div><div class="line">    public static Person <span class="function"><span class="title">getInstance</span></span>()&#123;</div><div class="line">    	<span class="keyword">if</span>(instance == null)&#123;</div><div class="line">        	synchronized (lock)&#123;</div><div class="line">            	<span class="keyword">if</span>(instance == null)&#123;</div><div class="line">                	instance = new Person();</div><div class="line">                	&#125;</div><div class="line">            	&#125;</div><div class="line">    	&#125;</div><div class="line">    	<span class="built_in">return</span> instance;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="懒汉单例模式（d）"><a href="#懒汉单例模式（d）" class="headerlink" title="懒汉单例模式（d）"></a>懒汉单例模式（d）</h4><blockquote>
 <p>线程安全，高并发性能高，我想这个只有经常用多线程的人才会写这个（反正我很少写，这是第二次！）</p>
 </blockquote>
-<pre><code>class Person {
-    private static Person instance;
-    private static ReentrantLock lock = new ReentrantLock();
-    private Person(){}
-    public static Person getInstance(){
-        if(instance == null){
-            lock.lock();
-            if(instance == null){
-                instance = new Person();
-            }
-            lock.unlock();
-        }
-       return instance;
-       }
-}
-</code></pre><blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">class Person &#123;</div><div class="line">    private static Person instance;</div><div class="line">    private static ReentrantLock lock = new ReentrantLock();</div><div class="line">    private <span class="function"><span class="title">Person</span></span>()&#123;&#125;</div><div class="line">    public static Person <span class="function"><span class="title">getInstance</span></span>()&#123;</div><div class="line">    	<span class="keyword">if</span>(instance == null)&#123;</div><div class="line">        	lock.lock();</div><div class="line">        	<span class="keyword">if</span>(instance == null)&#123;</div><div class="line">            	instance = new Person();</div><div class="line">        	&#125;</div><div class="line">        	lock.unlock();</div><div class="line">    	&#125;</div><div class="line">   	<span class="built_in">return</span> instance;</div><div class="line">   	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
 <p>既然有懒汉单例模式，会不会还有其他的单例模式呢？答案是肯定的，让我们了解另外一种单例模式–饿汉单例模式。</p>
 </blockquote>
 <h4 id="饿汉单例模式"><a href="#饿汉单例模式" class="headerlink" title="饿汉单例模式"></a>饿汉单例模式</h4><blockquote>
 <p>这种虽然没有加锁，执行效率会高，但是类加载时就初始化，很耗内存</p>
 </blockquote>
-<pre><code>class Person{
-    private static final Person PERSON = new Person();
-    private Person(){}
-    public static Person getIntance(){
-        return PERSON;
-    }
-}
-</code></pre><h4 id="登记单例模式"><a href="#登记单例模式" class="headerlink" title="登记单例模式"></a>登记单例模式</h4><blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">class Person&#123;</div><div class="line">	private static final Person PERSON = new Person();</div><div class="line">	private <span class="function"><span class="title">Person</span></span>()&#123;&#125;</div><div class="line">	public static Person <span class="function"><span class="title">getIntance</span></span>()&#123;</div><div class="line">		<span class="built_in">return</span> PERSON;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="登记单例模式"><a href="#登记单例模式" class="headerlink" title="登记单例模式"></a>登记单例模式</h4><blockquote>
 <p>听说这是最好的单例模式，解决了上面单例模式的缺点（不知道是不是，再查查，嘿嘿）</p>
 </blockquote>
-<pre><code>class Person{
-    private Person(){}
-    public static Person getInstance(){
-        return Hodler.PERSON;
-    }
-    private static class Hodler{
-        private static final Person PERSON = new Person();
-    }
-}
-</code></pre><h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">class Person&#123;</div><div class="line">	private <span class="function"><span class="title">Person</span></span>()&#123;&#125;</div><div class="line">	public static Person <span class="function"><span class="title">getInstance</span></span>()&#123;</div><div class="line">		<span class="built_in">return</span> Hodler.PERSON;</div><div class="line">	&#125;</div><div class="line">	private static class Hodler&#123;</div><div class="line">		private static final Person PERSON = new Person();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><ul>
 <li>单例模式需要私有化构造函数</li>
 <li>定义静态的Singleton instance对象和getInstance()方法</li>
 </ul>
