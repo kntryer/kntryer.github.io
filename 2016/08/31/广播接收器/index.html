@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="BroadcastReceiver," />
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="&amp;emsp;&amp;emsp;去年11月份，在工作室的指导老师的介绍下，我们工作室几个人承接了一个APP的外包。没有任何外包经验的我们摸爬滚打，常常开几个钟的会来讨论功能需求，讨论进度。 &amp;emsp;&amp;emsp;学习新的东西，时间总是很短。一月份很快就来临，因为经验的问题，我们的开发周期延长到这个月。半吊子 Android 的我在学东西很慢，很多东西都不理解，遇到 bug 的时候，一天很快就过去了。没有">
+<meta name="description" content="&amp;emsp;&amp;emsp;BroadcastReceiver 简称广播，是 Android 的四大组件之一，足以说明它的重要性。当时做很小的项目发现都没用过广播 ，非常的陌生，天真地认为广播没什么用。我真是太天真，虽然我不叫无邪。出来实习的时候，发现广播的应用场景很多，例如电量低、锁屏、推送、闹铃等等都需要用到广播。广播不仅能在四大组件之间通信，而且还能在不同进程之间通信，简直就是神了，是我太肤浅了">
+<meta name="keywords" content="BroadcastReceiver">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2016 年度总结">
-<meta property="og:url" content="http://yoursite.com/2016/12/28/2016年度总结/index.html">
+<meta property="og:title" content="广播接收器">
+<meta property="og:url" content="http://yoursite.com/2016/08/31/广播接收器/index.html">
 <meta property="og:site_name" content="The star note">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;去年11月份，在工作室的指导老师的介绍下，我们工作室几个人承接了一个APP的外包。没有任何外包经验的我们摸爬滚打，常常开几个钟的会来讨论功能需求，讨论进度。 &amp;emsp;&amp;emsp;学习新的东西，时间总是很短。一月份很快就来临，因为经验的问题，我们的开发周期延长到这个月。半吊子 Android 的我在学东西很慢，很多东西都不理解，遇到 bug 的时候，一天很快就过去了。没有">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;BroadcastReceiver 简称广播，是 Android 的四大组件之一，足以说明它的重要性。当时做很小的项目发现都没用过广播 ，非常的陌生，天真地认为广播没什么用。我真是太天真，虽然我不叫无邪。出来实习的时候，发现广播的应用场景很多，例如电量低、锁屏、推送、闹铃等等都需要用到广播。广播不仅能在四大组件之间通信，而且还能在不同进程之间通信，简直就是神了，是我太肤浅了">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-11T10:03:47.035Z">
+<meta property="og:updated_time" content="2017-10-17T02:17:42.650Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2016 年度总结">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;去年11月份，在工作室的指导老师的介绍下，我们工作室几个人承接了一个APP的外包。没有任何外包经验的我们摸爬滚打，常常开几个钟的会来讨论功能需求，讨论进度。 &amp;emsp;&amp;emsp;学习新的东西，时间总是很短。一月份很快就来临，因为经验的问题，我们的开发周期延长到这个月。半吊子 Android 的我在学东西很慢，很多东西都不理解，遇到 bug 的时候，一天很快就过去了。没有">
+<meta name="twitter:title" content="广播接收器">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;BroadcastReceiver 简称广播，是 Android 的四大组件之一，足以说明它的重要性。当时做很小的项目发现都没用过广播 ，非常的陌生，天真地认为广播没什么用。我真是太天真，虽然我不叫无邪。出来实习的时候，发现广播的应用场景很多，例如电量低、锁屏、推送、闹铃等等都需要用到广播。广播不仅能在四大组件之间通信，而且还能在不同进程之间通信，简直就是神了，是我太肤浅了">
 
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/12/28/2016年度总结/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/08/31/广播接收器/"/>
 
 
 
 
 
-  <title>2016 年度总结 | The star note</title>
+  <title>广播接收器 | The star note</title>
   
 
 
@@ -272,7 +273,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/28/2016年度总结/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/08/31/广播接收器/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kntryer">
@@ -289,7 +290,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">2016 年度总结</h1>
+          <h1 class="post-title" itemprop="name headline">广播接收器</h1>
         
 
         <div class="post-meta">
@@ -301,8 +302,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-28T16:19:55+08:00">
-                2016-12-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-31T15:20:09+08:00">
+                2016-08-31
               </time>
             
 
@@ -324,8 +325,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
+                  <a href="/categories/技术笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">技术笔记</span>
                   </a>
                 </span>
 
@@ -335,8 +336,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/随笔/年度总结/" itemprop="url" rel="index">
-                    <span itemprop="name">年度总结</span>
+                  <a href="/categories/技术笔记/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
                   </a>
                 </span>
 
@@ -352,7 +353,7 @@
 
           
           
-             <span id="/2016/12/28/2016年度总结/" class="leancloud_visitors" data-flag-title="2016 年度总结">
+             <span id="/2016/08/31/广播接收器/" class="leancloud_visitors" data-flag-title="广播接收器">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -383,13 +384,25 @@
       
 
       
-        <p>&emsp;&emsp;去年11月份，在工作室的指导老师的介绍下，我们工作室几个人承接了一个APP的外包。没有任何外包经验的我们摸爬滚打，常常开几个钟的会来讨论功能需求，讨论进度。</p>
-<p>&emsp;&emsp;学习新的东西，时间总是很短。一月份很快就来临，因为经验的问题，我们的开发周期延长到这个月。半吊子 Android 的我在学东西很慢，很多东西都不理解，遇到 bug 的时候，一天很快就过去了。没有做过的东西都会觉得很难，但坚持下去一定会有收获。</p>
-<p>&emsp;&emsp;中旬的时候，忍受不了老妈的催促，我回家了。因为那时候奶奶的身体有恙，我想回去看看。在家的每天都会抽空看看奶奶还有爷爷，他们蛮开心的，我想老年时最盼的是儿孙的关心与陪伴吧。</p>
-<p>&emsp;&emsp;不得不说，我还挺喜欢瞎搞的。那时家里没有拉网线，搞开发变得很艰难。刚好家里有个路由器，就把邻居的 WiFi 覆盖到咱家来，虽然网速不稳定，但至少能查查资料，看看博客。我对编程这么感兴趣，可能很大部分来自于瞎搞，嘿嘿。</p>
-<p>&emsp;&emsp;二月份在忙碌的气氛中悄悄到来，整个埠头都忙着搞卫生、买年货、贴对联等等，脸上布满幸福的笑容。忙碌是春节的气氛吧，突然这样想。每年除夕的那晚我都没睡，静静的看着空白的天花板，放空自己，让思绪自动流转。看起来毫无意义，但很舒适。</p>
-<p>&emsp;&emsp;有相聚必有离别。在离开的那天，看着奶奶浑浊的双眼，有点不舍，我握住奶奶的手，对她说：“我过完这学期就回来看你，很快”。来到了九月，没想到这一别就是永远。</p>
-<p>&emsp;&emsp;三四月在忙一个大学生软件设计比赛，和舍友一起进行开发，那时我开始学习php接口开发，结果看了一周的php就开始打代码了。</p>
+        <p>&emsp;&emsp;BroadcastReceiver 简称广播，是 Android 的四大组件之一，足以说明它的重要性。当时做很小的项目发现都没用过广播 ，非常的陌生，天真地认为广播没什么用。我真是太天真，虽然我不叫无邪。出来实习的时候，发现广播的应用场景很多，例如电量低、锁屏、推送、闹铃等等都需要用到广播。广播不仅能在四大组件之间通信，而且还能在不同进程之间通信，简直就是神了，是我太肤浅了。</p>
+<a id="more"></a>
+<p>&emsp;&emsp;广播有发送者和接受者，不需要知道对方是否存在。发送者和接收者不需要知道对方是否存在就可以执行工作了。在广播中不能执行耗时操作，否则会报 ANR (Android Not Responding) 异常，一般10秒钟就执行完，所以说一则广播执行的时间短，但是要执行耗时操作的时候怎么办？这时一般是通过 startService() 新建一个 Service 来执行耗时操作。因为广播的生命周期很短，子线程可能还没有结束广播就先结束了。广播一旦结束，此时广播的所在进程很容易在系统需要内存时被优先杀死，因为它属于空进程 ( 没有任何活动组件的进程 )。如果它的宿主进程被杀死，那么正在工作的子线程也会被杀死。所以采用子线程来解决是不可靠的。</p>
+<h3 id="接收广播注册"><a href="#接收广播注册" class="headerlink" title="接收广播注册"></a>接收广播注册</h3><blockquote>
+<p>接收广播有两种方法，分别是动态注册和静态注册，都需要设置广播的地址，也就是 action 。</p>
+</blockquote>
+<h4 id="动态注册"><a href="#动态注册" class="headerlink" title="动态注册"></a>动态注册</h4><p>&emsp;&emsp;动态注册需要在代码中动态的指定广播地址并注册，通常我们是在Activity或Service注册一个广播。动态注册不是常驻型的，也就是说广播会跟随程序的生命周期。动态注册也需要动态解除注册，如果没有解除注册，系统会报一个异常，提示我们是否忘记解除注册了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">MyBroadcastReceiver receiver;</div><div class="line">IntentFilter filter;</div><div class="line"></div><div class="line">@Override</div><div class="line">protected void onStart() &#123;</div><div class="line">	super.onStart();</div><div class="line">	receiver = new MyBroadcastReceiver();</div><div class="line">	filter = new IntentFilter();</div><div class="line">	filter.addAction(&quot;io.github.kntryer.MyBroadcastReceiver&quot;);//设置地址</div><div class="line">	filter.setPriority(100);//设置优先级</div><div class="line">	registerReceiver(receiver,filter );//注册广播</div><div class="line">&#125;</div><div class="line"></div><div class="line">@Override</div><div class="line">protected void onStop() &#123;</div><div class="line">    super.onStop();</div><div class="line">    unregisterReceiver(receiver);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="静态注册"><a href="#静态注册" class="headerlink" title="静态注册"></a>静态注册</h4><p>&emsp;&emsp;通过在 AndroidManifest.xml 文件注册一个广播 MyBroadcastReceiver 。配置了以上信息之后，只要是 android.intent.action.MyBroadcastReceiver 这个地址的广播， MyBroadcastReceiver 都能够接收的到。这种方式的注册是常驻型的，也就是说当应用关闭后，如果有广播信息传来， MyBroadcastReceiver 也会被系统调用而自动运行。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;receiver android:name=&quot;.MyBroadcastReceiver&quot;&gt;</div><div class="line">    &lt;intent-filter</div><div class="line">		android:priority=&quot;100&quot;&gt;</div><div class="line">        &lt;action android:name=&quot;io.github.kntryer.MyBroadcastReceiver&quot; /&gt;</div><div class="line">        &lt;category android:name=&quot;android.intent.category.DEFAULT&quot; /&gt;</div><div class="line">    &lt;/intent-filter&gt;</div><div class="line">&lt;/receiver&gt;</div></pre></td></tr></table></figure>
+<h3 id="发送广播类型"><a href="#发送广播类型" class="headerlink" title="发送广播类型"></a>发送广播类型</h3><blockquote>
+<p>发送广播有两种不同类型，分别是普通广播（Normal Broadcast）和有序广播（Ordered Broadcast）</p>
+</blockquote>
+<h4 id="普通广播"><a href="#普通广播" class="headerlink" title="普通广播"></a>普通广播</h4><p>&emsp;&emsp;普通广播是通过 sendBroadcast() 方法发送广播，是完全异步的，可以在同一时刻被所有接受者接受到，消息传递的效率比较高，但接受者不能将处理结果共享给其他接受者，并且无法终止广播。</p>
+<h4 id="有序广播"><a href="#有序广播" class="headerlink" title="有序广播"></a>有序广播</h4><p>&emsp;&emsp;有序广播是通过 sendOrderedBroadcast() 方法发送广播，是按照接收者声明的优先级别逐个进行广播，级别越高，就越快接收到广播。级别高的接受者可以通过 abortBroatcast() 方法终结广播，如果广播被终结，后面的接受者就无法接收到广播了。有序广播还可以传递数据给下一个广播接收者。接受者的优先级可以通过 setPriority() 方法设置也可以通过设置 AndroidManifest.xml 中的 intent-filter 来实现,当priority优先级相同的时候，Receiver以任意的顺序运行。其中 priority 为 “2147483647” 时优先级最高。</p>
+<h4 id="发送广播"><a href="#发送广播" class="headerlink" title="发送广播"></a>发送广播</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Intent intent = new Intent(&quot;io.github.kntryer.MyBroadcastReceiver&quot;);</div><div class="line">sendBroadcast(intent);</div><div class="line">//sendOrderedBroadcast(intent);</div></pre></td></tr></table></figure>
+<h3 id="Hello-Broadcast"><a href="#Hello-Broadcast" class="headerlink" title="Hello Broadcast"></a>Hello Broadcast</h3><h4 id="广播接收类"><a href="#广播接收类" class="headerlink" title="广播接收类"></a>广播接收类</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">public class HelloBroadCast extends BroadcastReceiver &#123;</div><div class="line">    @Override</div><div class="line">    public void onReceive(Context context, Intent intent) &#123;</div><div class="line">        Toast.makeText(context,&quot;hello&quot;,Toast.LENGTH_LONG).show();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="广播发送类"><a href="#广播发送类" class="headerlink" title="广播发送类"></a>广播发送类</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">public class BroadCastActivity extends AppCompatActivity &#123;</div><div class="line"></div><div class="line">    IntentFilter filter;</div><div class="line">    HelloBroadCast receiver;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    protected void onCreate(@Nullable Bundle savedInstanceState) &#123;</div><div class="line">        super.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_hello_broadcast);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    protected void onStart() &#123;</div><div class="line">        super.onStart();</div><div class="line">//        if (filter==null)&#123;</div><div class="line">//            filter = new IntentFilter();</div><div class="line">//            filter.addAction(&quot;io.github.kntryer.hellobroadcast&quot;);</div><div class="line"></div><div class="line">//            receiver = new HelloBroadCast();</div><div class="line">//            registerReceiver(receiver,filter);</div><div class="line">//        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    protected void onStop() &#123;</div><div class="line">        super.onStop();</div><div class="line">//        unregisterReceiver(receiver);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public void sayHello(View view)&#123;</div><div class="line"></div><div class="line">        Intent intent = new Intent(&quot;io.github.kntryer.hellobroadcast&quot;);</div><div class="line">        sendBroadcast(intent);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p><a href="http://www.jianshu.com/p/903e08cba4b6" target="_blank" rel="external">BroadcastReceiver</a></p>
 
       
     </div>
@@ -434,6 +447,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/BroadcastReceiver/" rel="tag"># BroadcastReceiver</a>
+          
+        </div>
+      
 
       
       
@@ -443,8 +462,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/08/31/广播接收器/" rel="next" title="广播接收器">
-                <i class="fa fa-chevron-left"></i> 广播接收器
+              <a href="/2016/04/26/单例模式/" rel="next" title="设计模式之单例模式">
+                <i class="fa fa-chevron-left"></i> 设计模式之单例模式
               </a>
             
           </div>
@@ -453,8 +472,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/10/09/hello-world/" rel="prev" title="Hello World">
-                Hello World <i class="fa fa-chevron-right"></i>
+              <a href="/2016/12/28/2016年度总结/" rel="prev" title="2016 年度总结">
+                2016 年度总结 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -507,8 +526,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -582,6 +610,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#接收广播注册"><span class="nav-number">1.</span> <span class="nav-text">接收广播注册</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#动态注册"><span class="nav-number">1.1.</span> <span class="nav-text">动态注册</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#静态注册"><span class="nav-number">1.2.</span> <span class="nav-text">静态注册</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发送广播类型"><span class="nav-number">2.</span> <span class="nav-text">发送广播类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#普通广播"><span class="nav-number">2.1.</span> <span class="nav-text">普通广播</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#有序广播"><span class="nav-number">2.2.</span> <span class="nav-text">有序广播</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#发送广播"><span class="nav-number">2.3.</span> <span class="nav-text">发送广播</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hello-Broadcast"><span class="nav-number">3.</span> <span class="nav-text">Hello Broadcast</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#广播接收类"><span class="nav-number">3.1.</span> <span class="nav-text">广播接收类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#广播发送类"><span class="nav-number">3.2.</span> <span class="nav-text">广播发送类</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料"><span class="nav-number">4.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
