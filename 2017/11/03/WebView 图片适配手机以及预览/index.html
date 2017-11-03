@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="&amp;emsp;&amp;emsp; 修改图片宽高适配手机屏幕 通过 js 获取标签 img 的数组，并且修改 img 的宽高来适配手机屏幕的大小。  123456789javascript:(function()&amp;#123;    var objs = document.getElementsByTagName(&apos;img&apos;);    for(var i=0;i&amp;lt;objs.length;i++)&amp;#12">
+<meta name="description" content="&amp;emsp;&amp;emsp; WebView 加载 js12345678910111213141516171819WebSettings webSettings = webView.getSettings();webSettings.setJavaScriptEnabled(true);//支持jswebView.setWebViewClient(new WebViewClient()&amp;#123;">
 <meta name="keywords" content="WebView">
 <meta property="og:type" content="article">
 <meta property="og:title" content="WebView 图片适配手机以及预览">
-<meta property="og:url" content="http://yoursite.com/2017/11/03/WebView的使用/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/11/03/WebView 图片适配手机以及预览/index.html">
 <meta property="og:site_name" content="The star note">
-<meta property="og:description" content="&amp;emsp;&amp;emsp; 修改图片宽高适配手机屏幕 通过 js 获取标签 img 的数组，并且修改 img 的宽高来适配手机屏幕的大小。  123456789javascript:(function()&amp;#123;    var objs = document.getElementsByTagName(&apos;img&apos;);    for(var i=0;i&amp;lt;objs.length;i++)&amp;#12">
+<meta property="og:description" content="&amp;emsp;&amp;emsp; WebView 加载 js12345678910111213141516171819WebSettings webSettings = webView.getSettings();webSettings.setJavaScriptEnabled(true);//支持jswebView.setWebViewClient(new WebViewClient()&amp;#123;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-02T16:35:45.329Z">
+<meta property="og:updated_time" content="2017-11-03T01:35:21.097Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="WebView 图片适配手机以及预览">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp; 修改图片宽高适配手机屏幕 通过 js 获取标签 img 的数组，并且修改 img 的宽高来适配手机屏幕的大小。  123456789javascript:(function()&amp;#123;    var objs = document.getElementsByTagName(&apos;img&apos;);    for(var i=0;i&amp;lt;objs.length;i++)&amp;#12">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp; WebView 加载 js12345678910111213141516171819WebSettings webSettings = webView.getSettings();webSettings.setJavaScriptEnabled(true);//支持jswebView.setWebViewClient(new WebViewClient()&amp;#123;">
 
 
 
@@ -120,7 +120,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/11/03/WebView的使用/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/11/03/WebView 图片适配手机以及预览/"/>
 
 
 
@@ -273,7 +273,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/03/WebView的使用/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/03/WebView 图片适配手机以及预览/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kntryer">
@@ -353,7 +353,7 @@
 
           
           
-             <span id="/2017/11/03/WebView的使用/" class="leancloud_visitors" data-flag-title="WebView 图片适配手机以及预览">
+             <span id="/2017/11/03/WebView 图片适配手机以及预览/" class="leancloud_visitors" data-flag-title="WebView 图片适配手机以及预览">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -385,11 +385,12 @@
 
       
         <p>&emsp;&emsp;</p>
+<h4 id="WebView-加载-js"><a href="#WebView-加载-js" class="headerlink" title="WebView 加载 js"></a>WebView 加载 js</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">WebSettings webSettings = webView.getSettings();</div><div class="line">webSettings.setJavaScriptEnabled(<span class="keyword">true</span>);<span class="comment">//支持js</span></div><div class="line">webView.setWebViewClient(<span class="keyword">new</span> WebViewClient()&#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">shouldOverrideUrlLoading</span><span class="params">(WebView view, String url)</span> </span>&#123;</div><div class="line">        view.loadUrl(url);</div><div class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onPageFinished</span><span class="params">(WebView view, String url)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onPageFinished(view, url);</div><div class="line">        imgReset();<span class="comment">//重置webview中img标签的图片大小</span></div><div class="line">        <span class="comment">// html加载完成之后，添加监听图片的点击js函数</span></div><div class="line">        addImageClickListner();</div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line">webView.addJavascriptInterface(<span class="keyword">new</span> JavaScriptInterface(<span class="keyword">this</span>), <span class="string">"imagelistner"</span>);</div><div class="line">webView.loadDataWithBaseURL(<span class="keyword">null</span>,   , <span class="string">"text/html"</span>, <span class="string">"utf-8"</span>, <span class="keyword">null</span>);</div></pre></td></tr></table></figure>
 <h4 id="修改图片宽高适配手机屏幕"><a href="#修改图片宽高适配手机屏幕" class="headerlink" title="修改图片宽高适配手机屏幕"></a>修改图片宽高适配手机屏幕</h4><blockquote>
 <p>通过 js 获取标签 img 的数组，并且修改 img 的宽高来适配手机屏幕的大小。</p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">javascript:(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> objs = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'img'</span>);</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;objs.length;i++)&#123;</div><div class="line">        <span class="keyword">var</span> img = objs[i];</div><div class="line">        img.style.maxWidth = <span class="string">'100%'</span>;</div><div class="line">        img.style.height = <span class="string">'auto'</span>;</div><div class="line">    &#125;</div><div class="line">&#125;)()</div></pre></td></tr></table></figure>
-<h4 id="设置图片点击事件，点击大图预览"><a href="#设置图片点击事件，点击大图预览" class="headerlink" title="设置图片点击事件，点击大图预览"></a>设置图片点击事件，点击大图预览</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">javascript:(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> objs = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'img'</span>);</div><div class="line">    <span class="keyword">var</span> photos = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;objs.length;i++)&#123;</div><div class="line">		photos[i] = objs[i].src;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;objs.length;i++)&#123;</div><div class="line">        objs[i].onclick=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="built_in">window</span>.imagelistner.openImage(<span class="keyword">this</span>.src,photos);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;)()</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">javascript:(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> objs = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'img'</span>);</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;objs.length;i++)&#123;</div><div class="line">        <span class="keyword">var</span> img = objs[i];</div><div class="line">        img.style.maxWidth = <span class="string">'100%'</span>;</div><div class="line">        img.style.height = <span class="string">'auto'</span>;</div><div class="line">    &#125;</div><div class="line">&#125;)()</div></pre></td></tr></table></figure>
+<h4 id="设置图片点击事件"><a href="#设置图片点击事件" class="headerlink" title="设置图片点击事件"></a>设置图片点击事件</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">javascript:(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> objs = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'img'</span>);</div><div class="line">    <span class="keyword">var</span> photos = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;objs.length;i++)&#123;</div><div class="line">		photos[i] = objs[i].src;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;objs.length;i++)&#123;</div><div class="line">        objs[i].onclick=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="built_in">window</span>.imagelistner.openImage(<span class="keyword">this</span>.src,photos);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;)()</div></pre></td></tr></table></figure>
       
     </div>
     
@@ -537,7 +538,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -548,7 +549,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -559,7 +560,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -602,7 +603,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#修改图片宽高适配手机屏幕"><span class="nav-number">1.</span> <span class="nav-text">修改图片宽高适配手机屏幕</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置图片点击事件，点击大图预览"><span class="nav-number">2.</span> <span class="nav-text">设置图片点击事件，点击大图预览</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#WebView-加载-js"><span class="nav-number">1.</span> <span class="nav-text">WebView 加载 js</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改图片宽高适配手机屏幕"><span class="nav-number">2.</span> <span class="nav-text">修改图片宽高适配手机屏幕</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置图片点击事件"><span class="nav-number">3.</span> <span class="nav-text">设置图片点击事件</span></a></li></ol></div>
             
 
           </div>
